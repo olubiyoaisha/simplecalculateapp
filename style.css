@@ -1,0 +1,256 @@
+:root {
+     --background-color: #99ECEA;
+    --primary-shadow-color: #0ABAB5;
+    --secondary-shadow-color: #3ACBC7;
+    --font-color: black;
+    --danger-font-color: red;
+    --history-section-color: #3ACBC7;
+    --history-hover-color: rgb(255, 255, 246);
+    --button-background-color: whitesmoke;
+}
+    .light{--background-color: #58555A;
+    --primary-shadow-color: rgba(0,0,0,0.2);
+    --secondary-shadow-color: rgba(90,200,139, 0.9);
+    --font-color: whitesmoke;
+    --danger-font-color: red;
+    --history-section-color: rgba(245, 245, 245, 0.5);
+    --history-hover-color: rgb(2, 1, 1);
+    --button-background-color: rgb(20, 19, 19);
+}
+
+ 
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif; 
+    overflow: hidden;  
+}
+
+.font-style {
+    font-style: oblique;
+    font-size: 1.5rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    width: 90vw;
+    height: 90vh;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.calculator {
+    padding: 1.5rem;
+    display: inline-flex;  
+    flex-direction: column;
+    font-weight: lighter;
+    font-size: 1.5rem;
+    grid-column: 1/10;
+}
+
+.section {
+    grid-column: 10/17;
+    display: block;
+    padding: 1.5rem;
+}
+
+.history-btn {
+    font-size: 2rem;
+    color: var(--font-color);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.bar {
+    position: sticky;
+    top: 0;
+    background-color: var(--button-background-color);
+    min-height: 12vh;
+    border-bottom-left-radius: 1rem;
+    border-bottom: 10px solid var(--history-section-color);
+}
+
+.result-row {
+    flex: 2;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.result-row > * {
+    flex: 1;
+}
+
+.first-row,
+.second-row,
+.third-row,
+.fourth-row,
+.fifth-row {
+    display: inline-flex;
+    flex: 1;
+}
+
+button {
+    flex: 0;
+    margin: 1rem;
+}
+
+.first-row > *,
+.second-row > *,
+.third-row > *,
+.fourth-row > *,
+.fifth-row > * {
+    flex: 1;
+    font-size: 1.5rem;
+}
+
+input[type=button],
+input[type=submit] {
+    color: var(--font-color);
+    background-color: var(--button-background-color);
+    margin: 5px;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type=button].light-theme,
+input[type=submit].light-theme {
+    color: var(--history-hover-color);
+}
+
+input[type=button]:hover, input[type=submit]:hover,
+input[type=button]:active, input[type=submit]:active {
+    filter: contrast(0.8);
+}
+
+input.btn {
+    color: var(--secondary-shadow-color);
+}
+
+input.btn--operator {
+    font: 1.85rem;
+}
+
+input[type=text] {
+    background-color: transparent;
+    color: var(--font-color);
+    text-align: right;
+    font-size: 1.5rem;
+    border: 0;
+}
+
+input.output {
+    font-size: 2rem;
+    color: var(--secondary-shadow-color);
+    font-weight: 800;
+}
+
+.toggle-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--button-background-color);
+    color: var(--font-color);
+    font-size: 1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.toggle-btn:hover {
+    filter: contrast(0.8);
+}
+
+input.btn--danger {
+    color: var(--danger-font-color);
+}
+
+.container {
+    margin-top: 1rem;
+    max-height: 75vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+dl {
+    line-height: 1;
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    transform: scaleY(-1);
+}
+
+dt {
+    font-size: 2rem;
+    padding: 0.35rem 1rem 0.35rem 0.75rem;
+    font-weight: 800;
+}
+
+dd {
+    scroll-snap-align: center;
+    font-size: 1.5rem;
+    padding: 0.35rem 1rem 0.35rem 0.75rem;
+    color: var(--history-section-color);
+}
+
+dl > * {
+    margin-bottom: 0.5rem;
+    transform: scaleY(-1);
+}
+
+dl > *:hover {
+    background-color: var(--history-hover-color);
+    filter: contrast(0.8);
+}
+
+.divclass {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .calculator {
+        grid-column: 1/17;
+    }
+
+    .wrapper {
+        min-height: 100vh;
+    }
+
+    .toggle-btn {
+        margin-bottom: 0.5rem;
+    }
+
+    .section {
+        display: none;
+    }
+}
+
+@media (orientation: landscape) {
+    .wrapper {
+        min-height: 100vh;
+    }
+    
+    .calculator {
+        font-size: 1.2rem;
+    }
+}

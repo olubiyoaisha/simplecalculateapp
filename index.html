@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-------------------------------------AOS CSS Links------------------------------------->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+
+    <title> Calculator App</title>
+</head>
+<body>
+    <div class="wrapper" >
+        <form class="calculator" name="calculator" action="#" data-aos="flip-right">
+            <div class="result-row">
+                <input type="text" name="display" id="display" disabled value="0">
+                <input type="text" class="output" name="output" id="output" disabled>
+            </div>
+            <div class="first-row">
+                <input type="button" class="number" name="seven" id="seven" value=7>
+                <input type="button" class="number" name="eight" id="eight" value=8>
+                <input type="button" class="number" name="nine" id="nine" value=9>
+                <input type="button" class="btn btn--danger" name="del" id="del" value="Del">
+            </div>
+            <div class="second-row">
+                <input type="button" class="number" name="four" id="four" value=4>
+                <input type="button" class="number" name="five" id="five" value=5>
+                <input type="button" class="number" name="six" id="six" value=6>
+                <input type="button" class="btn btn--operator" name="times" id="times" value="×">
+            </div>
+            <div class="third-row">
+                <input type="button" class="number" name="one" id="one" value=1>
+                <input type="button" class="number" name="two" id="two" value=2>
+                <input type="button" class="number" name="three" id="three" value=3>
+                <input type="button" class="btn btn--operator" name="slash" id="slash" value="/"> 
+            </div>
+            <div class="fourth-row">
+                <input type="button" class="btn number" name="bracket--open" id="bracket--open" value="(">
+                <input type="button" class="btn number" name="bracket--close" id="bracket--close" value=")">
+                <input type="button" class="btn btn--operator" name="minus" id="minus" value="-">
+                <input type="button" class="btn btn--operator" name="plus" id="plus" value="+">
+            </div>
+            <div class="fifth-row">
+                <input type="button" class="btn" name="plus-or-minus" id="plusminus" value="±">
+                <input type="button" class="number" name="zero" id="zero" value=0>
+                <input type="button" class="btn number btn--operator" name="decimal" id="decimal" value=".">
+                <input type="submit" class="btn btn--passive" name=" equals" id="equals" value="=">
+            </div>
+            <button class="toggle-btn">Light mode 🔆</button>
+        </form>
+        
+        <section class="section" data-aos="fade-down">
+            <div class="bar"><h2 class="history-btn">History</h2></div>
+            <dl class="history"></dl>
+        </section>
+    </div>
+
+    <!-------------------------------------AOS Links------------------------------------->
+       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration:1000,
+    });
+  </script>
+</body>
+</html>
